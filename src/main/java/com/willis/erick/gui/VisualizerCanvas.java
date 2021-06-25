@@ -1,7 +1,6 @@
 package com.willis.erick.gui;
 
 import com.willis.erick.models.AdjacencyLine;
-import com.willis.erick.models.Line;
 import com.willis.erick.models.Point;
 import com.willis.erick.models.Rectangle;
 import com.willis.erick.utils.Geometry;
@@ -61,39 +60,37 @@ public class VisualizerCanvas extends JPanel {
         g.setColor(Color.darkGray);
         g.fillRect(0, 0, this.getWidth(), this.getHeight());
         for (Rectangle item : rectangles) {
-            item.Draw(g);
+            item.draw(g);
         }
         if (rectangles.size() >= 2) {
             if (rectangles.size() > 2) {
-                DrawRectRelationship(g, rectangles.get(rectangles.size() - 1), rectangles.get(0));
+                drawRectRelationship(g, rectangles.get(rectangles.size() - 1), rectangles.get(0));
             }
             for (int i = 1; i < rectangles.size(); i++) {
-                DrawRectRelationship(g, rectangles.get(i - 1), rectangles.get(i));
+                drawRectRelationship(g, rectangles.get(i - 1), rectangles.get(i));
             }
         }
     }
 
-    private void DrawRectRelationship(Graphics g, Rectangle r1, Rectangle r2) {
+    private void drawRectRelationship(Graphics g, Rectangle r1, Rectangle r2) {
         // visualize overlap
-        Point[] overlapPoints = Geometry.OverlapPoints(r1, r2);
-        boolean containment = Geometry.Contains(r1, r2) || Geometry.Contains(r2, r1);
+        Point[] overlapPoints = Geometry.getOverlapPoints(r1, r2);
+        boolean containment = Geometry.isContained(r1, r2) || Geometry.isContained(r2, r1);
         if (overlapPoints.length == 4) {
             g.setColor(containment ? transparentGreen : transparentRed);
             g.fillRect(overlapPoints[0].x, overlapPoints[0].y, overlapPoints[3].x - overlapPoints[0].x, overlapPoints[3].y - overlapPoints[0].y);
         }
 
         // visualize adjacency
-        if (Geometry.IsAdjacent(r1, r2)) {
-            for (AdjacencyLine l : Geometry.AdjacencyLines(r1, r2)) {
-                l.line.SetColor(Color.magenta).SetThickness(3);
-                l.Draw(g);
-            }
+        for (AdjacencyLine l : Geometry.getAdjacencyLines(r1, r2)) {
+            l.line.setColor(Color.magenta).setThickness(3);
+            l.draw(g);
         }
 
         // visualize intersection points
-        Point[] intersectingPoints = Geometry.RectangleIntersections(r1, r2);
+        Point[] intersectingPoints = Geometry.getRectangleIntersections(r1, r2);
         for (Point p : intersectingPoints) {
-            p.Draw(g);
+            p.draw(g);
         }
     }
 }

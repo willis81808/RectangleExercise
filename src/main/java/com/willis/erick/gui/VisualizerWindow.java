@@ -1,14 +1,10 @@
 package com.willis.erick.gui;
 
-import com.willis.erick.models.Point;
 import com.willis.erick.models.Rectangle;
-import com.willis.erick.utils.Geometry;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.Line2D;
-import java.util.ArrayList;
 
 public class VisualizerWindow extends JFrame {
     public boolean isOpen = false;
@@ -23,7 +19,7 @@ public class VisualizerWindow extends JFrame {
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                OnClose();
+                onClose();
             }
         });
 
@@ -34,11 +30,11 @@ public class VisualizerWindow extends JFrame {
         this.setVisible(true);
     }
 
-    private void OnClose() {
+    private void onClose() {
         isOpen = false;
     }
 
-    public void AddRectangle(Rectangle item) {
+    public void addRectangle(Rectangle item) {
         canvas.rectangles.add(item);
     }
 }

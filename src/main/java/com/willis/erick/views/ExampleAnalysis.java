@@ -10,34 +10,34 @@ import java.util.Scanner;
 public class ExampleAnalysis implements IMenuItem {
 
     @Override
-    public void OnDisplay(Scanner scanner) {
+    public void onDisplay(Scanner scanner) {
         System.out.println(
                 "Available Presets:\n" +
                 "1) 200x200 and 300x300\n" +
                 "2) 300x100 and 100x300\n" +
                 "3) Three rectangles");
-        int selection = ConsoleHelper.GetInt(scanner, "> ", "Please select a valid integer in the range 1-3", 1, 3);
+        int selection = ConsoleHelper.getInt(scanner, "> ", "Please select a valid integer in the range 1-3", 1, 3);
 
         // open visualizer window
         VisualizerWindow visualizerWindow = new VisualizerWindow(700, 700);
         switch (selection) {
             case 1:
-                visualizerWindow.AddRectangle(new Rectangle(200, 200, 400, 400));
-                visualizerWindow.AddRectangle(new Rectangle(300, 300, 600, 600));
+                visualizerWindow.addRectangle(new Rectangle(200, 200, 400, 400));
+                visualizerWindow.addRectangle(new Rectangle(300, 300, 600, 600));
                 break;
             case 2:
-                visualizerWindow.AddRectangle(new Rectangle(200, 300, 500, 400));
-                visualizerWindow.AddRectangle(new Rectangle(300, 200, 400, 500));
+                visualizerWindow.addRectangle(new Rectangle(200, 300, 500, 400));
+                visualizerWindow.addRectangle(new Rectangle(300, 200, 400, 500));
                 break;
             case 3:
-                visualizerWindow.AddRectangle(new Rectangle(200, 200, 400, 400));
-                visualizerWindow.AddRectangle(new Rectangle(300, 300, 600, 600));
-                visualizerWindow.AddRectangle(new Rectangle(400, 400, 600, 600));
+                visualizerWindow.addRectangle(new Rectangle(200, 200, 400, 400));
+                visualizerWindow.addRectangle(new Rectangle(300, 300, 600, 600));
+                visualizerWindow.addRectangle(new Rectangle(400, 400, 600, 600));
                 break;
         }
 
         // pause console input while window is open
-        ConsoleHelper.WaitWhile(scanner, new ConsoleHelper.BooleanConditional() {
+        ConsoleHelper.waitWhile(scanner, new ConsoleHelper.BooleanConditional() {
             @Override
             public boolean IsTrue() {
                 return visualizerWindow.isOpen;
@@ -46,7 +46,7 @@ public class ExampleAnalysis implements IMenuItem {
     }
 
     @Override
-    public String GetTitle() {
+    public String getTitle() {
         return "Example rectangle analysis";
     }
 }

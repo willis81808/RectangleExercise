@@ -22,10 +22,27 @@ public class Point implements IDrawable {
         this.color = color;
     }
 
-    public void Draw(Graphics g) {
+    @Override
+    public void draw(Graphics g) {
         g.setColor(color);
         g.drawArc(x - 5, y - 5, 10, 10, 0, 360);
         g.setColor(Color.white);
         g.drawString(text, x, y);
+    }
+
+    /**
+     * Compare X and Y values, excluding display text and color
+     *
+     * @param obj Object to compare
+     * @return Boolean equality
+     */
+    @Override
+    public boolean equals(Object obj) {
+        try {
+            Point other = (Point)obj;
+            return other.x == this.x && other.y == this.y;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

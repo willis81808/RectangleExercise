@@ -19,28 +19,17 @@ public class Line implements IDrawable {
         this.p2 = p2;
     }
 
-    public Line SetColor(Color color) {
+    public Line setColor(Color color) {
         this.color = color;
         return this;
     }
-    public Line SetThickness(int thickness) {
+    public Line setThickness(int thickness) {
         this.thickness = thickness;
         return this;
     }
 
-    public int Length() {
-        int dx = p1.x - p2.x;
-        int dy = p1.y - p2.y;
-        return (int)Math.sqrt(dx * dx + dy * dy);
-    }
-    public int SquareLength() {
-        int dx = p1.x - p2.x;
-        int dy = p1.y - p2.y;
-        return dx * dx + dy * dy;
-    }
-
     @Override
-    public void Draw(Graphics g) {
+    public void draw(Graphics g) {
         Graphics2D g2 = (Graphics2D)g;
         Stroke defaultStroke = g2.getStroke();
         g2.setStroke(new BasicStroke(4));
@@ -49,6 +38,12 @@ public class Line implements IDrawable {
         g2.setStroke(defaultStroke);
     }
 
+    /**
+     * Compare X and Y values of start and end points, excluding display color and thickness
+     *
+     * @param obj Object to compare
+     * @return Boolean equality
+     */
     @Override
     public boolean equals(Object obj) {
         try {

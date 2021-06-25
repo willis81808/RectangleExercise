@@ -9,24 +9,24 @@ import java.util.Scanner;
 
 public class RectangleAnalysis implements IMenuItem {
     @Override
-    public void OnDisplay(Scanner scanner) {
+    public void onDisplay(Scanner scanner) {
         // get preview window dimensions
-        int width = ConsoleHelper.GetInt(scanner, "Screen Width (100-1000): ", "Please enter a valid integer value in the range 100-1000", 100, 1000);
-        int height = ConsoleHelper.GetInt(scanner, "Screen Height (100-1000): ", "Please enter a valid integer value in the range 100-1000", 100, 1000);
+        int width = ConsoleHelper.getInt(scanner, "Screen Width (100-1000): ", "Please enter a valid integer value in the range 100-1000", 100, 1000);
+        int height = ConsoleHelper.getInt(scanner, "Screen Height (100-1000): ", "Please enter a valid integer value in the range 100-1000", 100, 1000);
 
         // get rectangles
-        System.out.println("Rectangle 1");
-        Rectangle rect1 = ConsoleHelper.GetRect(scanner, width, height);
-        System.out.println("Rectangle 2");
-        Rectangle rect2 = ConsoleHelper.GetRect(scanner, width, height);
+        System.out.println("Top-left corner");
+        Rectangle rect1 = ConsoleHelper.getRect(scanner, width, height);
+        System.out.println("Bottom-right corner");
+        Rectangle rect2 = ConsoleHelper.getRect(scanner, width, height);
 
         // open visualizer window
         VisualizerWindow visualizerWindow = new VisualizerWindow(width, height);
-        visualizerWindow.AddRectangle(rect1);
-        visualizerWindow.AddRectangle(rect2);
+        visualizerWindow.addRectangle(rect1);
+        visualizerWindow.addRectangle(rect2);
 
         // pause console input while window is open
-        ConsoleHelper.WaitWhile(scanner, new ConsoleHelper.BooleanConditional() {
+        ConsoleHelper.waitWhile(scanner, new ConsoleHelper.BooleanConditional() {
             @Override
             public boolean IsTrue() {
                 return visualizerWindow.isOpen;
@@ -35,7 +35,7 @@ public class RectangleAnalysis implements IMenuItem {
     }
 
     @Override
-    public String GetTitle() {
+    public String getTitle() {
         return "Analyze a custom rectangle pair";
     }
 }
