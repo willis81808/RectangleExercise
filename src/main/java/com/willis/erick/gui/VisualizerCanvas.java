@@ -28,14 +28,16 @@ public class VisualizerCanvas extends JPanel {
                 int x = e.getX();
                 int y = e.getY();
 
+                Rectangle newRect = null;
                 for (int i = 0; i < rectangles.size(); i++) {
                     Rectangle element = rectangles.get(i);
                     if (x > element.x1 && y > element.y1 && x < element.x2 && y < element.y2) {
+                        newRect = element;
                         if (element == rect) break;
                         rect = element;
                     }
                 }
-                if (rect != null) {
+                if (newRect != null) {
                     rect.x1 += x - lastX;
                     rect.x2 += x - lastX;
                     rect.y1 += y - lastY;
