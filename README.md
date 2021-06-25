@@ -38,6 +38,6 @@ In the visualizer adjacency lines will be highlighted with a thick magenta strok
 # Building and running
 1) Pull or download/extract this repo
 2) Navigate to the project root directory (hitherto refered to as `root`) in command line/terminal
-3) Run `gradlew bulid`
+3) Run `gradlew build`
 4) Navigate to `root\build\libs` in command line/terminal
 5) Run `java -jar Rectangle_Exercise.jar`
