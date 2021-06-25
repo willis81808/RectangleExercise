@@ -11,7 +11,7 @@ Implemented in the `Geometry.getRectangleIntersections` method; pass in two rect
 In the visualizer these points will be shown as a green circles with their point coordinates, like so:
 
 *Diagram 1:*
-[!Intersection Example](https://i.imgur.com/zt6FJDW.png)
+![Intersection Example](https://i.imgur.com/zt6FJDW.png)
 
 ## Containment
 Implemented in the `Geometry.isContained` method; pass in two rectangles and a boolean representing whether one is wholly contained within the other will be returned (true if there is full containment, false otherwise). To calculate a set of points defining the boundaries of the two rectangles area-of-overlap, use `Geometry.getOverlapPoints`
@@ -22,7 +22,7 @@ __Partial containment:__ See Diagram 1
 __Full containment:__ See Diagram 2
 
 *Diagram 2*
-[!Partial containment example](https://i.imgur.com/wzpgOIN.png)
+![Partial containment example](https://i.imgur.com/wzpgOIN.png)
 
 ## Adjacency
 Implemented in `Geometry.getAdjacencyLines` method; pass in two rectangles and an array of `AdjacencyLine` entities will be returned representing all lines shared by the two rectangles (including a flag indicating the exact type of adjacency), if there are any. If simply detecting whether an adjacency relationship exists is all that's required, use `Geometry.isAdjacent` instead.
@@ -30,7 +30,7 @@ Implemented in `Geometry.getAdjacencyLines` method; pass in two rectangles and a
 In the visualizer adjacency lines will be highlighted with a thick magenta stroke and a yellow text label denoting the type of adjacency represented by the highlighted line. All three adjacency types can be seen in the following example:
 
 *Diagram 3*
-[!Adjacency example](https://i.imgur.com/WU7ed3P.png)
+![Adjacency example](https://i.imgur.com/WU7ed3P.png)
 
 # Building and running
 1) Pull or download/extract this repo
