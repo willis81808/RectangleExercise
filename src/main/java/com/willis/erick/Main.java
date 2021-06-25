@@ -1,7 +1,7 @@
 package com.willis.erick;
 
 import com.willis.erick.interfaces.IMenuItem;
-import com.willis.erick.views.RectangleAnalysis;
+import com.willis.erick.views.CustomAnalysis;
 import com.willis.erick.views.ExampleAnalysis;
 import com.willis.erick.utils.ConsoleHelper;
 
@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         mainMenu(new IMenuItem[]{
                  new ExampleAnalysis(),
-                 new RectangleAnalysis(),
+                 new CustomAnalysis(),
                  new IMenuItem() {
                      @Override
                      public void onDisplay(Scanner scanner) {

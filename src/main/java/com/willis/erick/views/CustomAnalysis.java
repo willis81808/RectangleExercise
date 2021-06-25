@@ -8,7 +8,7 @@ import com.willis.erick.utils.ConsoleHelper;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class RectangleAnalysis implements IMenuItem {
+public class CustomAnalysis implements IMenuItem {
     @Override
     public void onDisplay(Scanner scanner) {
         // get preview window dimensions
