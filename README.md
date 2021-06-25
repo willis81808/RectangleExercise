@@ -11,6 +11,7 @@ Implemented in the `Geometry.getRectangleIntersections` method; pass in two rect
 In the visualizer these points will be shown as a green circles with their point coordinates, like so:
 
 *Diagram 1:*
+
 ![Intersection Example](https://i.imgur.com/zt6FJDW.png)
 
 ## Containment
@@ -22,6 +23,7 @@ __Partial containment:__ See Diagram 1
 __Full containment:__ See Diagram 2
 
 *Diagram 2*
+
 ![Partial containment example](https://i.imgur.com/wzpgOIN.png)
 
 ## Adjacency
@@ -30,6 +32,7 @@ Implemented in `Geometry.getAdjacencyLines` method; pass in two rectangles and a
 In the visualizer adjacency lines will be highlighted with a thick magenta stroke and a yellow text label denoting the type of adjacency represented by the highlighted line. All three adjacency types can be seen in the following example:
 
 *Diagram 3*
+
 ![Adjacency example](https://i.imgur.com/WU7ed3P.png)
 
 # Building and running
