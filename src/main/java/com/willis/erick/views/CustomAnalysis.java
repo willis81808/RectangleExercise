@@ -21,7 +21,7 @@ public class CustomAnalysis implements IMenuItem {
 
         // get rectangles
         while (adding) {
-            System.out.println("Add a rectangle");
+            System.out.println("\nAdd a rectangle");
             rectangles.add(ConsoleHelper.getRect(scanner, width, height));
 
             System.out.println("\nAdd another? (y/n)");
