@@ -20,6 +20,7 @@ Implemented in the `Geometry.isContained` method; pass in two rectangles and a b
 In the visualizer there will be a box drawn to visualize the area of overlap between the two rectangles, red if only partial overlap, and green if there is full containment.
 
 __Partial containment:__ See Diagram 1
+
 __Full containment:__ See Diagram 2
 
 *Diagram 2*
